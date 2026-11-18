@@ -1,32 +1,29 @@
-# React + TypeScript + Vite
+# Eco Trip 🌍✈️
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**Eco Trip** est une application web permettant aux voyageurs de choisir leur prochaine destination de manière responsable, en filtrant selon la **distance maximale souhaitée (en km)** ainsi que **l'ambiance recherchée**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Technologies utilisées
 
-## React Compiler
+* **Front-end :** React (JavaScript / JSX) avec Vite
+* **Back-end :** Python avec Flask
+* **Base de données :** SQLite
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## Architecture du dépôt
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+Le projet fonctionne avec **1 branche principale** `main` et une branche de développement fusionnée :
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```text
+eco-trip/
+├── front1/          # Application Front-end (React JS)
+├── backend/            # API Back-end (Flask) et base SQLite
+└── README.md        # Documentation du projet
 ```
+---
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### Lien du Git
+
+https://github.com/noasara/eco-trip
