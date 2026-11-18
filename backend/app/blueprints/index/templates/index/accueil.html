@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('index.static', filename='favicon.svg') }}" />
+    <title>eco-trip</title>
+    {% for stylesheet in react_entry.get('css', []) %}
+      <link rel="stylesheet" href="{{ url_for('index.static', filename=stylesheet) }}" />
+    {% endfor %}
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="{{ url_for('index.static', filename=react_entry.file) }}"></script>
+  </body>
+</html>
