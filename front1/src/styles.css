@@ -1,0 +1,20 @@
+:root { --vert: #2f7d4f; --fond: #f5f8f4; --texte: #1d2a22; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: var(--fond); color: var(--texte); }
+.page { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+header h1 { margin: 0; color: var(--vert); }
+header p { margin: 4px 0 24px; }
+.formulaire { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; align-items: end; margin-bottom: 24px; }
+.formulaire label { display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
+.formulaire .large { grid-column: 1 / -1; }
+input, select { padding: 8px; border: 1px solid #b9c7bd; border-radius: 6px; font-size: 15px; }
+button { padding: 10px 16px; background: var(--vert); color: white; border: 0; border-radius: 6px; font-size: 15px; cursor: pointer; }
+button:disabled { opacity: 0.6; cursor: wait; }
+.bandeau { background: #fff3cd; padding: 8px 12px; border-radius: 6px; }
+.colonnes { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.temps { font-size: 13px; opacity: 0.7; margin-top: 0; }
+.carte { background: white; border-radius: 8px; padding: 12px 16px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.carte h3 { margin: 0 0 6px; }
+.carte ul { margin: 0; padding-left: 18px; font-size: 14px; }
+
+.erreur { color: #b00020; font-size: 14px; margin: 0; }

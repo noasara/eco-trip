@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <!-- Dégradé de l'océan -->
+    <radialGradient id="oceanGrad" cx="38%" cy="32%" r="65%">
+      <stop offset="0%" stop-color="#5CE1E6" />
+      <stop offset="55%" stop-color="#1E96D8" />
+      <stop offset="100%" stop-color="#0D5C9E" />
+    </radialGradient>
+
+    <!-- Dégradé des continents -->
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A8EB42" />
+      <stop offset="100%" stop-color="#5BB324" />
+    </linearGradient>
+
+    <!-- Masque circulaire de la planète -->
+    <clipPath id="globeClip">
+      <circle cx="62" cy="64" r="44" />
+    </clipPath>
+  </defs>
+
+  <!-- Planète Terre -->
+  <g clip-path="url(#globeClip)">
+    <!-- Océan -->
+    <circle cx="62" cy="64" r="44" fill="url(#oceanGrad)" />
+
+    <!-- Continents (Amériques à gauche, Europe/Afrique à droite) -->
+    <g fill="url(#landGrad)" stroke="#124E78" stroke-width="2" stroke-linejoin="round">
+      <!-- Amérique du Nord / Groenland -->
+      <path d="M 32,22 C 42,20 55,24 56,31 C 57,36 49,38 51,43 C 53,48 61,48 59,54 C 57,59 47,58 44,63 C 41,68 44,71 39,71 C 34,71 27,63 24,54 C 21,44 24,29 32,22 Z" />
+      <!-- Amérique du Sud -->
+      <path d="M 43,72 C 50,72 57,78 56,86 C 55,94 48,104 43,106 C 39,107 38,97 39,89 C 40,81 38,73 43,72 Z" />
+      <!-- Europe / Asie -->
+      <path d="M 73,27 C 83,24 98,31 103,41 C 107,49 102,56 96,55 C 91,54 90,48 84,49 C 78,50 75,45 76,39 C 77,34 69,30 73,27 Z" />
+      <!-- Afrique -->
+      <path d="M 74,56 C 83,54 96,59 99,68 C 102,77 95,91 88,94 C 82,96 79,86 77,78 C 75,70 68,60 74,56 Z" />
+      <!-- Petites îles -->
+      <circle cx="64" cy="36" r="2.5" />
+      <circle cx="68" cy="48" r="2" />
+    </g>
+
+    <!-- Reflet lumineux haut-gauche -->
+    <path d="M 28,45 A 38,38 0 0,1 65,24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.35" />
+  </g>
+
+  <!-- Contour de la planète -->
+  <circle cx="62" cy="64" r="44" fill="none" stroke="#103B63" stroke-width="3.5" />
+
+  <!-- Traînée de l'avion autour du globe -->
+  <path d="M 22,68 C 10,82 28,96 76,78" fill="none" stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="round" opacity="0.9" />
+  <path d="M 22,68 C 10,82 28,96 76,78" fill="none" stroke="#D9F4FF" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Avion orienté vers le haut-droite -->
+  <g transform="translate(88, 66) rotate(-32)">
+    <!-- Aile arrière (haut) -->
+    <polygon points="-14,-3 -4,-16 3,-15 -2,-3" fill="#7CE8FF" stroke="#103B63" stroke-width="2.5" stroke-linejoin="round" />
+    <!-- Dérive (queue) -->
+    <polygon points="-24,-2 -28,-12 -21,-12 -16,-2" fill="#48CAE4" stroke="#103B63" stroke-width="2.5" stroke-linejoin="round" />
+    <!-- Fuselage -->
+    <path d="M -25,0 C -25,-4 -15,-5 12,-5 C 22,-5 28,-2 28,0 C 28,2 22,5 12,5 C -15,5 -25,4 -25,0 Z" fill="#FFFFFF" stroke="#103B63" stroke-width="2.8" stroke-linejoin="round" />
+    <!-- Aile avant (bas) -->
+    <polygon points="-6,3 6,20 13,18 5,3" fill="#48CAE4" stroke="#103B63" stroke-width="2.5" stroke-linejoin="round" />
+    <!-- Hublots -->
+    <g fill="#103B63">
+      <circle cx="-8" cy="-0.5" r="1.4" />
+      <circle cx="-3" cy="-0.5" r="1.4" />
+      <circle cx="2" cy="-0.5" r="1.4" />
+      <circle cx="7" cy="-0.5" r="1.4" />
+      <circle cx="12" cy="-0.5" r="1.4" />
+    </g>
+    <!-- Cockpit -->
+    <path d="M 18,-2.5 C 21,-2.5 23,-1.2 23,0 L 18,0 Z" fill="#1E96D8" />
+  </g>
+</svg>

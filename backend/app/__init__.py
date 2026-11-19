@@ -12,7 +12,8 @@ def create_app():
 	app.config['SESSION_COOKIE_SECURE'] = False # car on dev
 	app.secret_key = 'ma cle secrete unique'
 
-	from app.blueprints import index_bp
+	from app.blueprints import index_bp, api_bp
 	app.register_blueprint(index_bp)
+	app.register_blueprint(api_bp, url_prefix='/api')
 	
 	return app
