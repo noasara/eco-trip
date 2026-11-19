@@ -1,4 +1,5 @@
 from flask import Blueprint, jsonify, request
+from backend.app.database.connection import get_db_connection
 
 api_bp = Blueprint('api', __name__)
 
@@ -19,3 +20,28 @@ def recommandations():
         }
     }
     return jsonify(response)
+
+@api_bp.route("/destinations", methods=["GET"])
+def get_destinations():
+    """
+    Récupère toutes les destinations enregistrées dans SQLite.
+    """
+
+    connection = get_db_connection()
+
+    try:
+        destinations = connection.execute(
+            "SELECT * FROM destinations"
+        ).fetchall()
+
+        # Convertir les résultats SQLite en dictionnaires
+        results = [dict(destination) for destination in destinations]
+
+        return jsonify({
+            "status": "success",
+            "count": len(results),
+            "data": results
+        }), 200
+
+    finally:
+        connection.close()

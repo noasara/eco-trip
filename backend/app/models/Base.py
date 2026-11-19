@@ -22,9 +22,14 @@ class BaseModelMixin :
 
 def get_engine(db_uri=None):
     """crée et retourne un moteur SQLAlchemy
-    le chemin de la BDD db_uri est app/superheroes.db par défaut"""
+    le chemin de la BDD db_uri est app/ecotrip.db par défaut"""
     if db_uri is None:
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        db_path = os.path.join(base_dir, 'superheroes.db')
+        db_path = os.path.join(base_dir, 'ecotrip.db')
         db_uri = f"sqlite:///{db_path}"
     return create_engine(db_uri, echo=False)
+
+def initialize_database(db_uri=None):
+    """initialise la base de données en créant les tables"""
+    engine = get_engine(db_uri)
+    Base.metadata.create_all(engine)
