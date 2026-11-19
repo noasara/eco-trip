@@ -1,7 +1,7 @@
 // Le seul fichier qui parle au backend Flask.
 // Si le format JSON change, on ne modifie que ce fichier.
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL || "";
 
 // Réponse attendue de POST /api/recommandations :
 // {
